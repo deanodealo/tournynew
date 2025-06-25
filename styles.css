@@ -1,0 +1,267 @@
+/* ============================= */
+/*      Global Reset            */
+/* ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/*      Body & Background       */
+/* ============================= */
+body {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  background: url('images/backnew.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  line-height: 1.4;
+  overflow-x: hidden; /* just in case */
+}
+
+body::before {
+  content: "";
+  position: fixed; /* fixed so it stays during scroll */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); /* Black overlay at 40% opacity */
+  pointer-events: none; /* so it doesn’t block clicks */
+  z-index: -1; /* behind all content */
+}
+
+
+/* ============================= */
+/*      Banner Styles            */
+/* ============================= */
+header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.banner-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0 10%;
+}
+
+.banner-image-left, .banner-image-right {
+  width: 150px; /* Square dimensions */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px; /* Rounded edges for a more polished look */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.banner-image-left {
+  transform: translateX(-10%); /* Move to the left */
+}
+
+.banner-image-right {
+  transform: translateX(10%); /* Move to the right */
+}
+
+.logo {
+  width: 550px;       /* Adjust width to make image bigger */
+  height: auto;       /* Maintain aspect ratio */
+  border-radius: 15px; /* Rounded corners */
+  display: block;     /* Optional: so it behaves like a block element */
+  margin: 0 auto;     /* Optional: center the image horizontally */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: subtle shadow */
+}
+
+
+h1 {
+  font-size: 3.5em;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+}
+
+/* ============================= */
+/*      Main Content Wrapper     */
+/* ============================= */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+/* ============================= */
+/*      Table Section Styles     */
+/* ============================= */
+.league-table, .fixtures-results {
+  flex: 1 1 48%;
+  min-width: 300px;
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* lighter shadow for subtle depth */
+  margin-bottom: 20px;
+}
+
+.league-table {
+  flex: 1 1 58%;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+  margin: 10px 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: left; /* or center */
+}
+
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  color: #222;
+  box-shadow: none; /* remove old shadows */
+  font-family: 'Poppins', sans-serif;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee; /* very thin light gray line */
+  font-weight: 500;
+}
+
+th {
+  background-color: #fff; /* keep header white */
+  color: #555; /* softer dark for headings */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  border-bottom: 2px solid #ddd; /* slightly thicker line below header */
+}
+
+tr:last-child td {
+  border-bottom: none; /* no border after last row */
+}
+
+tr:hover td {
+  background-color: #f9f9f9; /* subtle hover effect */
+  cursor: default;
+}
+
+
+table {
+  border-radius: 10px;
+  overflow: hidden; /* Ensures rounded corners apply to inner rows */
+}
+
+
+/* Fixtures & Results */
+ul {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+}
+
+li {
+  font-size: 1.2em;
+  color: #003366;
+  background-color: #e5f2ff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* ============================= */
+/*      Footer / Controls        */
+/* ============================= */
+footer {
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+}
+
+.auto-cycle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.auto-cycle label {
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.auto-cycle select,
+.auto-cycle input[type="checkbox"] {
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  color: #003366;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+}
+
+/* ============================= */
+/*      Button Styling           */
+/* ============================= */
+button {
+  background-color: #006bb3;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #00588c;
+}
+
+/* ============================= */
+/*      Responsive Adjustments    */
+/* ============================= */
+@media (max-width: 768px) {
+  .main-content {
+      flex-direction: column;
+      align-items: center;
+  }
+  .league-table,
+  .fixtures-results {
+      width: 90%;
+      margin-bottom: 30px;
+  }
+}
+
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0.3; /* control transparency */
+}
